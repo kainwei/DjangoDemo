@@ -2,4 +2,4 @@ from django.http import HttpResponse
 
 
 def hello(request):
-    return HttpResponse("Hello world 3! ")
+    return HttpResponse("Hello world 4! ")
