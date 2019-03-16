@@ -1,3 +1,2 @@
 #!/bin/bash
-ps -ef|grep manage.py|grep -v grep |awk '{print $2}'|xargs -i kill -9 {}
-exit 0
+ps -ef|grep manage.py|grep -v grep |awk '{print $2}'|xargs -i kill -9 {} > /dev/null 2>&1;echo $?
