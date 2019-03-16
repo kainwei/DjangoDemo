@@ -7,8 +7,7 @@ environment_variables:
 phases:
   install:
     commands:
-      - apt-get update -y
-      - apt-get install -y curl wget
+
 
   pre_build:
     commands:
