@@ -1,6 +1,10 @@
 #!/bin/bash
+
 list=$(ps -ef|grep manage.py|grep -v grep|awk '{print $2}')
 
 for i in `echo $list`;do
-        kill -9 $i
+        count=$(ps -ef|grep -v grep|awk '{print $2}'|grep $i)
+        if [ count != 0 ];then
+                kill -9 $i
+        fi
 done
