@@ -1,4 +1,10 @@
 #!/bin/bash
+ps -ef|grep manager.py|grep -v grep |awk '{print $2}' > /root/ca.log
+
+ps -ef|grep manager.py|grep -v grep |awk '{print $2}' |xargs kill -9 {} || true
+
+rm -rf /root/django
+echo "finished" >> /root/ca.log
 my_path=$(dirname $0)
 #pip3 install django
 nohup python3 $my_path/manage.py runserver 0.0.0.0:8000  > /dev/null 2>&1 &
