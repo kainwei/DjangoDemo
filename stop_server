@@ -1,6 +1,7 @@
 #!/bin/bash
 
 list=$(ps -ef|grep manage.py|grep -v grep|awk '{print $2}')
+echo $list > /dev/stderr
 
 for i in `echo $list`;do
         count=$(ps -ef|grep -v grep|awk '{print $2}'|grep $i)
