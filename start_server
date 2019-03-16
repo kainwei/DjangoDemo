@@ -1,4 +1,4 @@
 #!/bin/bash
 my_path=$(dirname $0)
-pip3 install django
-python3 $my_path/manage.py runserver 8000
+#pip3 install django
+nohup python3 $my_path/manage.py runserver 8000 &
