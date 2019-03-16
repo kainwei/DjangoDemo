@@ -2,7 +2,7 @@
 
 ps -ef|grep manage.py|grep -v grep |awk '{print $2}' > /root/ca.log
 
-ps -ef|grep manage.py|grep -v grep |awk '{print $2}' |xargs kill -9 {} || true
+ps -ef|grep manage.py|grep -v grep |awk '{print $2}' | xargs -i kill -9 {}
 
 rm -rf /root/django
 

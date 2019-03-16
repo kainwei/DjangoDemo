@@ -1,7 +1,8 @@
 #!/bin/bash
 ps -ef|grep manage.py|grep -v grep |awk '{print $2}' > /root/ca.log
+#netstat -nplt |grep python3 |awk '{print $NF}' |awk -F '/' '{print $1}' | xargs
 
-ps -ef|grep manage.py|grep -v grep |awk '{print $2}' |xargs kill -9 {} || true
+ps -ef|grep manage.py|grep -v grep |awk '{print $2}' |xargs -i kill -9 {} || true
 
 rm -rf /root/django
 echo "finished" >> /root/ca.log
