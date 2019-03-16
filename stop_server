@@ -1,5 +1,6 @@
 #!/bin/bash
-ps -ef|grep manage.py|grep -v grep |awk '{print $2}'|xargs -i kill -9 {} > /dev/null 2>&1
-if [ $? -ne 0 ];then
-    echo ""
-fi
+list=$(ps -ef|grep manage.py|grep -v grep|awk '{print $2}')
+
+for i in `echo $list`;do
+        kill -9 $i
+done
