@@ -1,11 +1,3 @@
 #!/bin/bash
 
-list=$(ps -ef|grep manage.py|grep -v grep|awk '{print $2}')
-echo $list > /dev/stderr
-
-for i in `echo $list`;do
-        count=$(ps -ef|grep -v grep|awk '{print $2}'|grep $i)
-        if [ $count != 0 ];then
-                kill -9 $i
-        fi
-done
+ps -ef|grep manager.py|awk '{print $2}'|xargs -i kill -9 {} || true
